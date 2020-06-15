@@ -1,0 +1,58 @@
+import random
+
+lst = ['w', 's', 'g']
+
+total_chance = 10
+no_of_chances = 0
+user_point = 0
+computer_point = 0
+
+while no_of_chances < total_chance:
+    _input = input(" Enter s for snake ,w for water and g for gun \n")
+    computer_input = random.choice(lst)
+                                                 # WHEN HUMAN WINS
+    if _input == "s" and computer_input == "w":
+        print("You win because computer chooses " + computer_input)
+        user_point = user_point + 1
+        print(f"Your point is {user_point} and computer point is {computer_point} ")
+    elif _input == "g" and computer_point == "s":
+        print("You win because computer chooses " + computer_input)
+        user_point = user_point + 1
+        print(f"Your point is {user_point} and computer point is {computer_point} ")
+    elif _input == "w" and computer_input == "g":
+        print("You win because computer chooses " + computer_input)
+        user_point = user_point + 1
+        print(f"Your point is {user_point} and computer point is {computer_point} ")
+                                        #     WHEN COMPUTER WINS
+    if computer_input == "w " and _input == "g":
+        print(f"You lose because computer chooses {computer_input}")
+        computer_point = computer_point + 1
+        print(f"Your point is {user_point} and computer point is {computer_point} ")
+    elif computer_input == "s" and _input == "w":
+        print(f"You lose because computer chooses {computer_input}")
+        computer_point = computer_point + 1
+        print(f"Your point is {user_point} and computer point is {computer_point} ")
+    elif computer_input == "g" and _input == "w":
+        print(f"You lose because computer chooses {computer_input}")
+        computer_point = computer_point + 1
+        print(f"Your point is {user_point} and computer point is {computer_point} ")
+    elif computer_input == "g" and _input == "s":
+        print(f"You lose because computer chooses {computer_input}")
+        computer_point = computer_point + 1
+        print(f"Your point is {user_point} and computer point is {computer_point} ")
+    elif _input == computer_input:
+        print("Both have chosen same that's why no points")
+    else:
+        print("Your input is wrong")
+    no_of_chances = no_of_chances + 1
+    print(f"No. of chances left is {total_chance - no_of_chances} out of {total_chance}")
+    _input = input(" Enter s for snake ,w for water and g for gun \n") * 10
+
+
+print("Game End")
+if user_point < computer_point:
+    print("You lose")
+elif user_point > computer_point:
+    print(" You win ")
+elif user_point == computer_point:
+    print("Match tied")
