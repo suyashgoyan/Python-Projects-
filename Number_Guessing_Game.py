@@ -1,7 +1,7 @@
 import random
 
 answer = random.randint(1,10)
-print(answer)
+
 choose_number = print("Choose a number between 1 to 10")
 
 
