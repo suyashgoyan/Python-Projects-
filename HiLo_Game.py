@@ -5,7 +5,7 @@ input("Press ENTER to start ")
 
 guesses = 1
 
-while True:                                     # We used True because the computer don't the exact answer
+while low != high:                                     # We used True because the computer don't the exact answer
     guess = low + (high - low) // 2                 #Binary Search Formula
 
     high_low = input("My guess is {}. Should I guess higher or lower?"
@@ -23,3 +23,6 @@ while True:                                     # We used True because the compu
         print("Please enter h,l or c")
 
     guesses += 1
+else:
+    print("You thought of the number {}".format(low))
+    print("I guessed the number in {} guesses.".format(guesses))
